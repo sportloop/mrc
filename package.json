@@ -1,0 +1,50 @@
+{
+  "name": "single-package",
+  "version": "1.0.0",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "browser": "dist/index.umd.js",
+  "module": "dist/index.module.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "test": "jest",
+    "sv": "standard-version"
+  },
+  "repository": "git@github.com:danielkov/single-package.git",
+  "author": "Daniel Emod Kovacs <kovacsemod@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "7.9.6",
+    "@babel/preset-env": "7.9.6",
+    "@babel/preset-typescript": "7.9.0",
+    "@commitlint/cli": "8.3.5",
+    "@commitlint/config-conventional": "8.3.4",
+    "@types/jest": "25.2.1",
+    "babel-jest": "25.5.1",
+    "eslint": "6.8.0",
+    "eslint-config-airbnb-typescript-prettier": "2.1.1",
+    "husky": "4.2.5",
+    "jest": "25.5.2",
+    "lint-staged": "10.2.1",
+    "prettier": "2.0.5",
+    "rollup": "2.7.6",
+    "rollup-plugin-bundle-size": "1.0.3",
+    "rollup-plugin-peer-deps-external": "2.2.2",
+    "rollup-plugin-typescript2": "0.27.0",
+    "standard-version": "7.1.0",
+    "ts-jest": "25.4.0",
+    "typescript": "3.8.3"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "npm run lint --fix",
+      "git add"
+    ]
+  }
+}

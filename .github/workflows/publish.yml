@@ -1,0 +1,74 @@
+name: Publish Package
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "src/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm ci
+      - run: npm test
+      - run: npm build
+
+  release:
+    needs: [build]
+    runs-on: ubuntu-latest
+    name: GitHub Push
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm ci
+      - run: npm build
+      - name: Commit files
+        run: |
+          git config --local user.email "kovacsemod@gmail.com"
+          git config --local user.name "danielkov"
+          npm run sv
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_PAT }}
+          branch: ${{ github.head_ref }}
+          force: true
+
+  publish-npm:
+    needs: release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - run: npm build
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+
+  publish-gpr:
+    needs: release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://npm.pkg.github.com/
+          scope: "@danielkov"
+      - run: npm ci
+      - run: npm build
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_PAT}}

@@ -1,0 +1,40 @@
+name: Greetings
+
+on: [pull_request, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: >-
+            \# Welcome to your first Issue
+
+            Hi **\#** and welcome to your first issue. First of all, thank you for taking the time to contribute to Open Source! 👏
+            Before we move further with this issue, make sure you've completed the following checklist.
+
+            1. [ ] Read our [Code of Conduct](CODE_OF_CONDUCT.md)
+            2. [ ] Followed the [Contribution Guidelines](CONTRIBUTING.md)
+            3. [ ] Filled out the Feature Request / Bug Report template
+
+            If you're submitting a bug report, make sure you're using the latest version of the package - some issues may have already been fixed and are waiting for you to try them out.
+
+            If you're having trouble setting something up, try searching for your problem on [StackOverflow](https://www.stackoverflow.com).
+
+            If you're suggesting a new feature, make sure you checked out closed pull requests - maybe there is a reason why this feature is not already part of this package.
+          pr-message: >-
+            \# Welcome to your first Pull Request
+
+            Hi **\#** and welcome to your first pull request. First of all, thank you for taking the time to contribute to Open Source! 👏
+
+            Before we move further with this issue, make sure you've completed the following checklist.
+
+            1. [ ] Read our [Code of Conduct](CODE_OF_CONDUCT.md)
+            2. [ ] Followed the [Contribution Guidelines](CONTRIBUTING.md)
+            3. [ ] Filled out the Pull Request template
+            4. [ ] Made sure your code is properly formatted and passes all the tests
+            5. [ ] Added new tests for new code you added
+
+            Once again, we appreciate your time and hope to see your code merged very soon!
