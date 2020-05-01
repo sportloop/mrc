@@ -1,11 +1,20 @@
 {
   "name": "@sportloop/mrc",
-  "version": "1.0.0",
+  "keywords": [
+    "workout",
+    "mrc",
+    "rowing",
+    "cycling",
+    "bicycle",
+    "erg"
+  ],
+  "version": "1.0.1",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "browser": "dist/index.umd.js",
   "module": "dist/index.module.js",
   "types": "dist/index.d.ts",
+  "sideEffects": false,
   "files": [
     "/dist"
   ],
