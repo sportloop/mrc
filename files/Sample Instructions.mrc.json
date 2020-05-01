@@ -1,0 +1,28 @@
+{
+  "courseHeader": {
+    "version": 2,
+    "units": "ENGLISH",
+    "description": "",
+    "fileName": "Sample Instructions",
+    "dataTypes": ["MINUTES", "PERCENT"]
+  },
+  "courseData": [
+    [0.0, 50],
+    [5.0, 50],
+    [5.0, 85],
+    [60.0, 85],
+    [60.0, 30],
+    [65.0, 30],
+    [65.0, 85],
+    [120.0, 85],
+    [120.0, 50],
+    [125.0, 30]
+  ],
+  "courseText": [
+    [0.25, "Welcome to this 120 minute tempo workout session...", 0.25],
+    [0.5, "It's going to simulate two long sessions of climbing", 0.25],
+    [0.75, "Make sure to stay hydrated", 0.25],
+    [4.75, "Your first 55 minutes are approaching", 0.15],
+    [4.9, "Let's begin!", 0.1]
+  ]
+}

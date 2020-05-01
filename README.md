@@ -1,21 +1,57 @@
-# Single Package
+# MRC
 
-This is a minimal config for a (React +) TypeScript package to publish to NPM.
-
-If you like this template, leave a [reference to it](https://github.com/danielkov/single-package) somewhere in your project.
+Workout file parser library, suitable for `.mrc` and `.erg` files, with first-class TypeScript support.
 
 ## Get started
 
-If you're visiting the [GitHub Repository](https://github.com/danielkov/single-package) and are logged in with your account, you can press **[Use this template](https://github.com/danielkov/single-package/generate)** to grab this repository for your own project. Alternatively you can fork this package and get started that way. After forking, you can periodically check the diff of this package with your own to see if anything changed and decide if you want to apply those changes to your repository too.
-
-Next thing you should do is to replace all references to this repository with your own, e.g.: the name property in [`package.json`](package.json#L2), as well as `"repository"` and `"author"` fields. Next, you should open the [`LICENSE`](LICENSE) file and modify the name and year in the header to match your preferences.
-
-Install dependencies with `npm install`.
-
-If your IDE is not running the linter by default as a service, you can lint files manually with
+Install the package:
 
 ```sh
-npm run lint
+npm install @sportloop/mrc
+```
+
+Usage:
+
+```ts
+import * as MRC from "@sportloop/mrc";
+
+const { courseHeader, courseData } = MRC.parse(`[COURSE HEADER]
+VERSION = 2
+UNITS = ENGLISH
+DESCRIPTION = Spin at 30% FTP for a few minutes, then two back to back sprints and easy spin again.
+FILE NAME = Two Towers
+MINUTES PERCENT
+[END COURSE HEADER]
+[COURSE DATA]
+0.00\t30
+10.00\t30
+10.00\t150
+10.25\t150
+10.25\t30
+10.75\t30
+10.75\t150
+11.00\t150
+11.00\t30
+60.00\t30
+[END COURSE DATA]`);
+
+console.log(courseHeader.description); // > Spin at 30% FTP for a few minutes, then two back to back sprints and easy spin again.
+console.log(courseData[0]); // > [0, 30]
+
+// Transform back to .mrc
+const mrc = MRC.stringify({ courseHeader, courseData });
+```
+
+## File Format
+
+The difference between `.erg` and `.mrc` is that `.erg` always contains all information required to execute the workout, while `.mrc` can be supplied with information, like FTP during execution time. Because of this, when using `.erg` you should either use `WATTS` as unit of course data or provide the `FTP` field, as seen in examples in [files folder](./files).
+
+## Development
+
+Install dependencies:
+
+```sh
+npm install
 ```
 
 Run tests in watch mode:

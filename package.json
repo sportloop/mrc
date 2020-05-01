@@ -1,5 +1,5 @@
 {
-  "name": "single-package",
+  "name": "@sportloop/mrc",
   "version": "1.0.0",
   "source": "src/index.ts",
   "main": "dist/index.js",
@@ -16,7 +16,7 @@
     "test": "jest",
     "sv": "standard-version"
   },
-  "repository": "git@github.com:danielkov/single-package.git",
+  "repository": "git@github.com:sportloop/mrc.git",
   "author": "Daniel Emod Kovacs <kovacsemod@gmail.com>",
   "license": "MIT",
   "devDependencies": {
@@ -43,8 +43,7 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "npm run lint --fix",
-      "git add"
+      "npm run lint --fix"
     ]
   }
 }
