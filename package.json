@@ -1,5 +1,5 @@
 {
-  "name": "@sportloop/mrc",
+  "name": "mrc",
   "keywords": [
     "workout",
     "mrc",
@@ -8,7 +8,7 @@
     "bicycle",
     "erg"
   ],
-  "version": "1.0.1",
+  "version": "1.0.0",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "browser": "dist/index.umd.js",

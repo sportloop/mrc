@@ -7,13 +7,13 @@ Workout file parser library, suitable for `.mrc` and `.erg` files, with first-cl
 Install the package:
 
 ```sh
-npm install @sportloop/mrc
+npm install mrc
 ```
 
 Usage:
 
 ```ts
-import * as MRC from "@sportloop/mrc";
+import * as MRC from "mrc";
 
 const { courseHeader, courseData } = MRC.parse(`[COURSE HEADER]
 VERSION = 2
