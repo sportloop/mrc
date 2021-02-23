@@ -30,7 +30,7 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "7.13.1",
-    "@babel/preset-env": "7.13.0",
+    "@babel/preset-env": "7.13.5",
     "@babel/preset-typescript": "7.13.0",
     "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
