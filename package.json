@@ -38,7 +38,7 @@
     "babel-jest": "27.0.6",
     "eslint": "7.30.0",
     "eslint-config-airbnb-typescript-prettier": "4.2.0",
-    "husky": "7.0.0",
+    "husky": "7.0.1",
     "jest": "27.0.6",
     "lint-staged": "11.0.0",
     "prettier": "2.3.2",
