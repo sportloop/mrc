@@ -40,7 +40,7 @@
     "eslint-config-airbnb-typescript-prettier": "4.2.0",
     "husky": "7.0.4",
     "jest": "27.4.7",
-    "lint-staged": "12.1.5",
+    "lint-staged": "12.1.6",
     "prettier": "2.5.1",
     "rollup": "2.63.0",
     "rollup-plugin-bundle-size": "1.0.3",
