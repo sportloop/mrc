@@ -42,7 +42,7 @@
     "jest": "27.5.1",
     "lint-staged": "12.3.5",
     "prettier": "2.5.1",
-    "rollup": "2.63.0",
+    "rollup": "2.70.0",
     "rollup-plugin-bundle-size": "1.0.3",
     "rollup-plugin-peer-deps-external": "2.2.4",
     "rollup-plugin-typescript2": "0.31.2",
