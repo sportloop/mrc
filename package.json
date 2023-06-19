@@ -34,7 +34,7 @@
     "@babel/preset-typescript": "7.16.7",
     "@commitlint/cli": "16.2.3",
     "@commitlint/config-conventional": "16.2.1",
-    "@types/jest": "27.4.1",
+    "@types/jest": "27.5.2",
     "babel-jest": "27.5.1",
     "eslint": "8.1.0",
     "eslint-config-airbnb-typescript-prettier": "4.2.0",
